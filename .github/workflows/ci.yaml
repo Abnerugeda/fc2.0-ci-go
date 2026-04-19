@@ -17,3 +17,8 @@ jobs:
           go-version: ${{ matrix.go }}
       - run: go test
       - run: go run math.go
+  check-application-complete:
+    needs: check-application
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "All matrix jobs passed"
